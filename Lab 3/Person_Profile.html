@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Person Profile</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        .container {
+            width: 500px;
+            margin: auto;
+            border: 2px solid gray;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 8px;
+        }
+
+        input, select {
+            width: 95%;
+            padding: 5px;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+
+            var name = document.forms["myForm"]["name"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var dob = document.forms["myForm"]["dob"].value;
+
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+
+            if (email == "") {
+                alert("Email must be filled out");
+                return false;
+            }
+
+            if (dob == "") {
+                alert("Date of Birth must be selected");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>PERSON PROFILE</h2>
+
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+
+        <table border="1">
+
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="email"></td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="Male"> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                    <input type="radio" name="gender" value="Other"> Other
+                </td>
+            </tr>
+
+            <tr>
+                <td>Date of Birth</td>
+                <td>
+                    <input type="date" name="dob">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Blood Group</td>
+                <td>
+                    <select name="blood">
+                        <option value="">Select</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Degree</td>
+                <td>
+                    <input type="checkbox" name="degree" value="SSC"> SSC
+                    <input type="checkbox" name="degree" value="HSC"> HSC
+                    <input type="checkbox" name="degree" value="BSc"> BSc
+                    <input type="checkbox" name="degree" value="MSc"> MSc
+                </td>
+            </tr>
+
+            <tr>
+                <td>Photo</td>
+                <td>
+                    <input type="file" name="photo">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="buttons">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+</div>
+
+</body>
+</html>
