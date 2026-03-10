@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>User Info</h2>
+
+<form name="userForm" onsubmit="return validateUser()" autocomplete="off">
+  User ID:
+  <input type="number"
+         name="userid"
+         min="1"
+         autocomplete="off"
+         inputmode="numeric"
+         onkeydown="return event.key >= '0' && event.key <= '9' || event.key === 'Backspace'">
+  <br><br>
+
+  Picture:
+  <input type="file" name="picture" accept="image/*"><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+function validateUser() {
+  var userid = document.forms["userForm"]["userid"].value;
+  var picture = document.forms["userForm"]["picture"].value;
+
+  if (userid === "" || userid <= 0) {
+    alert("User ID must be a positive number");
+    return false;
+  }
+
+  if (picture === "") {
+    alert("Please upload a picture");
+    return false;
+  }
+
+  return true;
+}
+</script>
+
+</body>
+</html>

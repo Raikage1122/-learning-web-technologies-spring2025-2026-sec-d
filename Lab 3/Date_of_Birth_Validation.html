@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOB Validation</title>
+</head>
+<body>
+
+<h2>Date of Birth</h2>
+
+<form name="dobForm" onsubmit="return validateDOB()">
+
+<table>
+    <tr>
+        <td>Day:</td>
+        <td><input type="text" name="dd" size="20"></td>
+    </tr>
+
+    <tr>
+        <td>Month:</td>
+        <td><input type="text" name="mm" size="20"></td>
+    </tr>
+
+    <tr>
+        <td>Year:</td>
+        <td><input type="text" name="yyyy" size="20"></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td><input type="submit" value="Submit"></td>
+    </tr>
+</table>
+
+</form>
+
+<script>
+function validateDOB() {
+
+    var dd = document.forms["dobForm"]["dd"].value;
+    var mm = document.forms["dobForm"]["mm"].value;
+    var yyyy = document.forms["dobForm"]["yyyy"].value;
+
+    if (dd == "" || mm == "" || yyyy == "") {
+        alert("All fields must be filled out");
+        return false;
+    }
+
+    if (isNaN(dd) || isNaN(mm) || isNaN(yyyy)) {
+        alert("Date must be numeric");
+        return false;
+    }
+
+    if (dd < 1 || dd > 31) {
+        alert("Invalid Day");
+        return false;
+    }
+
+    if (mm < 1 || mm > 12) {
+        alert("Invalid Month");
+        return false;
+    }
+
+    if (yyyy < 1900 || yyyy > 2016) {
+        alert("Invalid Year");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</body>
+</html>
