@@ -1,0 +1,3 @@
+raikage|mail1@gmail.com|123
+naruto|mail2@gmail.com|456
+sasuke|mail3@gmail.com|789
