@@ -1,3 +1,7 @@
+if(!localStorage.getItem("user")){
+    alert("Please login first");
+    window.location = "login.html";
+}
 var selectedId = null;
 
 function loadUsers() {
